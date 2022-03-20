@@ -1,0 +1,11 @@
+div#podcast-container {
+	display: flex;
+	padding: 0 0 0 100px;
+
+	& > {
+
+		div.content-side {
+			max-width: 700px;
+		}
+	}
+}

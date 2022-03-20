@@ -1,0 +1,23 @@
+header {
+	height: 80px;
+	width: 100%;
+	background: linear-gradient(to right, #300f77, #7c0384);
+	display: flex;
+	align-items: center;
+
+	& > {
+		
+		a {
+			margin: 0 0 0 100px;
+	
+			div.podchaser-logo {
+				width: 200px;
+				height: 40px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				cursor: pointer;
+			}
+		}
+	}
+}

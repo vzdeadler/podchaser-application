@@ -1,0 +1,33 @@
+div.podcast-card-container {
+	height: 80px;
+	width: calc(100% - 24px);
+	max-width: 700px;
+	border: 2px solid #e8eaec;
+	border-radius: 10px;
+	padding: 10px;
+	display: flex;
+	margin: 10px 0;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 0 .5rem -.3rem #7c0384;
+	}
+
+	& > {
+
+		img {
+			height: 80px;
+			width: 80px;
+			border-radius: 7px;
+		}
+
+		div.content {
+			margin: 0 0 0 15px;
+
+			h3, p {
+				margin: 10px 0;
+			}
+		}
+	}
+
+}
