@@ -1,42 +1,35 @@
 import PodcastCard from '../../../core/components/molecules/PodcastCard/PodcastCard';
+import { HomeFacade } from '../controller/facades/home.facade';
 
 import './Home.scss';
 
 const HomePage = (): JSX.Element => {
+	/** */
+	const { isLoading, podcasts, onPodcastClick } = HomeFacade.useHomeFacade();
 
 	return (
 		<div id='home-container'>
 			<h1>All Podcasts</h1>
 			<p>Browse the details of every podcast, ever.</p>
 
-			<PodcastCard
-				image={'https://tizza.co/wp-content/uploads/2020/07/Podcast.jpg'}
-				title={'Podcast title'}
-				date={'May 1st, 2021'}
-				description={'Podcast description'}
-			/>
+			{
+				isLoading && (
+					<p>Loading..</p>
+				)
+			}
 
-			<PodcastCard
-				image={'https://tizza.co/wp-content/uploads/2020/07/Podcast.jpg'}
-				title={'Podcast title'}
-				date={'May 1st, 2021'}
-				description={'Podcast description'}
-			/>
-
-			<PodcastCard
-				image={'https://tizza.co/wp-content/uploads/2020/07/Podcast.jpg'}
-				title={'Podcast title'}
-				date={'May 1st, 2021'}
-				description={'Podcast description'}
-			/>
-
-			<PodcastCard
-				image={'https://tizza.co/wp-content/uploads/2020/07/Podcast.jpg'}
-				title={'Podcast title'}
-				date={'May 1st, 2021'}
-				description={'Podcast description'}
-			/>
-
+			{
+				!isLoading && podcasts.map(podcast => {
+					return <PodcastCard
+						key={podcast.uid}
+						image={podcast.image}
+						title={podcast.title}
+						date={podcast.getDate()}
+						description={podcast.description}
+						onClick={() => onPodcastClick(podcast)}
+					/>
+				})
+			}
 		</div>
 	)
 }

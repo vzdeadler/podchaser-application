@@ -1,6 +1,7 @@
 export const ROUTES = { 
 	/** */
-	HOME: '',
+	HOME_PATH: '',
 	/** */
-	PODCAST: 'podcast/:uid',
+	PODCAST: (_podcastUID: string) => `podcast/${_podcastUID}`,
+	PODCAST_PATH: 'podcast/:uid',
 };

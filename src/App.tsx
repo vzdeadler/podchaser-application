@@ -11,8 +11,8 @@ const App = (): JSX.Element => {
 			<Router>
 				<Routes>
 					<Route path='/' element={<MainPage />}>
-						<Route path={ROUTES.HOME} element={<HomePage />} />
-						<Route path={ROUTES.PODCAST} element={<PodcastPage />} />
+						<Route path={ROUTES.HOME_PATH} element={<HomePage />} />
+						<Route path={ROUTES.PODCAST_PATH} element={<PodcastPage />} />
 					</Route>
 				</Routes>
 			</Router>

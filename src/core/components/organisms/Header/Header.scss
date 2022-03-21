@@ -3,7 +3,10 @@ header {
 	width: 100%;
 	background: linear-gradient(to right, #300f77, #7c0384);
 	display: flex;
-	align-items: center;
+	align-items: center;    
+	position: fixed;
+	top: 0;
+	z-index: 999;
 
 	& > {
 		

@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Header from "../../../core/components/organisms/Header/Header";
 
+import './Main.scss';
+
 const MainPage = (): JSX.Element => {
 
 	return (

@@ -7,7 +7,7 @@ const Header = (): JSX.Element => {
 
 	return (
 		<header>
-			<Link route={ROUTES.HOME}>
+			<Link route={ROUTES.HOME_PATH}>
 				<div className='podchaser-logo' style={ { backgroundImage: `url(${ASSETS.PODCHASER_LOGO})` } }></div>
 			</Link>
 		</header>

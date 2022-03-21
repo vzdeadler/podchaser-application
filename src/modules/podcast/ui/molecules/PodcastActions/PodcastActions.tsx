@@ -3,7 +3,7 @@ import './PodcastActions.scss';
 
 interface PodcastActionsProps {
 	/** */
-	follower: number;
+	follower: string;
 	/** */
 	rates: number;
 }
@@ -19,7 +19,7 @@ const PodcastActions = (props: PodcastActionsProps): JSX.Element => {
 			<Button style='primary' text='Follow'></Button>
 			<Button style='secondary' text='Rate'></Button>
 
-			<p>{follower} followers • {rates}</p>
+			<p>{follower} followers • {rates} ratings</p>
 		</div>
 	)
 };
