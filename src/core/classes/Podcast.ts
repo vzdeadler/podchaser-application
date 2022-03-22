@@ -1,3 +1,5 @@
+import { Episode } from "./Epidose";
+
 export class Podcast {
 
 	/** Class attribute description. */
@@ -40,6 +42,11 @@ export class Podcast {
 	set ratingCount(_ratingCount: number) { this._ratingCount = _ratingCount };
 	get ratingCount(): number { return this._ratingCount };
 
+	/** Class attribute description. */
+	private _episodes: Episode[];
+	set episodes(_episodes: Episode[]) { this._episodes = _episodes };
+	get episodes(): Episode[] { return this._episodes };
+
 	constructor () {
 		this._uid = -1;
 		this._title = '';
@@ -49,6 +56,7 @@ export class Podcast {
 		this._episodesNumber = -1;
 		this._rating = -1;
 		this._ratingCount = -1;
+		this._episodes = [];
 	}
 
 	/** */

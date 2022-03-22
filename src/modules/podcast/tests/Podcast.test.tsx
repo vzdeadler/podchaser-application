@@ -5,16 +5,9 @@ describe('Testing Podcast Page.', () => {
 
 	let container: HTMLDivElement;
 
-	beforeEach(() => {
-		container = document.createElement('div');
-		document.body.appendChild(container);
-		ReactDOM.render(<PodcastPage />, container);
-	});
-
-	afterEach(() => {
-		document.body.removeChild(container);
-		container.remove();
-	});
+	container = document.createElement('div');
+	document.body.appendChild(container);
+	ReactDOM.render(<PodcastPage />, container);
 
 	/** */
 	it('Renders correctly Podcast Page Component', () => {

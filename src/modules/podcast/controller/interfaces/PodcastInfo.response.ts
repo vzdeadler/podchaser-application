@@ -5,5 +5,10 @@ export interface PodcastInfoResponse {
 	description: string,
 	image_url: string,
 	rating_count: number,
-	rating: number
+	rating: number,
+	latest_episode: {
+		air_date: string,
+		id: number,
+		title: string,
+	}
 }

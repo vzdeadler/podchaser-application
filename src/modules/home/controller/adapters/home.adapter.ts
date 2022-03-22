@@ -1,4 +1,5 @@
 import { Podcast } from "../../../../core/classes/Podcast";
+import { TRANSFORM } from "../../../../utils/transform";
 import { PodcastsListResponse } from "../interfaces/PodcastsList.response";
 
 export namespace HomeAdapter {
@@ -15,14 +16,7 @@ export namespace HomeAdapter {
 				_podcast.description = _item.entity.description;
 				_podcast.image = _item.entity.image_url;
 	
-				const _date: string = _item.entity.created_at.split(' ')[0];
-				const _year: number = +(_date.split('-')[0]);
-				const _month: number = +(_date.split('-')[1]) - 1;
-				const _day: number = +(_date.split('-')[2]);
-	
-				const date: Date = new Date(_year, _month, _day);
-	
-				_podcast.date = date;
+				_podcast.date = TRANSFORM.DATE.getDateFromAPI(_item.entity.created_at);
 	
 				_podcasts.push(_podcast);
 			}

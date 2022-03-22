@@ -1,4 +1,5 @@
 import PodcastCard from '../../../core/components/molecules/PodcastCard/PodcastCard';
+import { TRANSFORM } from '../../../utils/transform';
 import { HomeFacade } from '../controller/facades/home.facade';
 
 import './Home.scss';
@@ -24,7 +25,7 @@ const HomePage = (): JSX.Element => {
 						key={podcast.uid}
 						image={podcast.image}
 						title={podcast.title}
-						date={podcast.getDate()}
+						date={TRANSFORM.DATE.getCardinalFormattedDate(podcast.date!)}
 						description={podcast.description}
 						onClick={() => onPodcastClick(podcast)}
 					/>
