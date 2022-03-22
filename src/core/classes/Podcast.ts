@@ -58,40 +58,4 @@ export class Podcast {
 		this._ratingCount = -1;
 		this._episodes = [];
 	}
-
-	/** */
-	private getMonthName(_month: number): string {
-		const months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-		const monthName: string = months[_month];
-
-		return monthName;
-	};
-
-	/** */
-	private getFormattedDay(_day: number): string {
-		let _daySuffix: string = '';
-
-		if(_day === 1)
-			_daySuffix = 'st';
-		else if(_day === 2)
-			_daySuffix = 'nd';
-		else if(_day === 3)
-			_daySuffix = 'rd';
-		else
-			_daySuffix = 'th';
-
-		return `${_day}${_daySuffix}`;
-	}
-
-	/** */
-	public getDate(): string {
-		const year: number = this.date!.getFullYear();
-		const month: number = this.date!.getMonth();
-		const day: number = this.date!.getDate();
-		let monthName: string = this.getMonthName(month);
-		let formattedDay: string = this.getFormattedDay(day);
-		let formattedDate: string = `${monthName} ${formattedDay}, ${year}`;
-
-		return formattedDate;
-	};
 }
