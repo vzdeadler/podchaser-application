@@ -1,4 +1,5 @@
 import './PodcastHeader.scss';
+import { AiTwotoneStar } from 'react-icons/ai';
 
 interface PodcastHeaderProps {
 	/** */
@@ -15,6 +16,7 @@ interface PodcastHeaderProps {
 const PodcastHeader = (props: PodcastHeaderProps): JSX.Element => {
 
 	/** */
+	const stars: number[] = [1, 2, 3, 4, 5];
 	const { image, title, episodes, rating } = props;
 	
 	return (
@@ -22,8 +24,15 @@ const PodcastHeader = (props: PodcastHeaderProps): JSX.Element => {
 			<img src={image} />
 
 			<div>
-				<h1>{title}</h1>
+				<h1 className={ title.length > 25 ? 'medium-text' : ''}>{title}</h1>
 				<p>A podcast with {episodes} episodes</p>
+				<div className='stars-wrapper'>
+					{
+						stars.map((star) => {
+							return <AiTwotoneStar className={star <= rating ? 'active' : ''}/>
+						})
+					}
+				</div>
 			</div>
 		</section>
 	)
